@@ -1,0 +1,141 @@
+name: Catalog
+# Spec 082 (US4 / Phase G) — the contribution gate for the capability catalog.
+#
+# This workflow is authored to live in the FUTURE `isoterm-catalog` repository
+# (which holds `catalog/items/*.toml` descriptors + their local artifacts), but
+# it is intentionally also runnable locally against this repo (e.g. with
+# https://github.com/nektos/act) so the gate can be exercised before split-out.
+#
+# Two phases, mirroring `contracts/catalog-sign-cli.md`:
+#
+#   * On a PULL REQUEST -> `catalog validate --check-urls`: every descriptor is
+#     schema / sha256 / URL / core_compat validated. A broken descriptor fails
+#     the job with an actionable, per-file message and CANNOT reach a signed
+#     manifest (FR-012 / FR-013, SC-005).
+#
+#   * On PUSH to the default branch (a merge) -> additionally `catalog build` +
+#     `catalog sign`, then upload `manifest.json` + `manifest.json.sig` as build
+#     artifacts for static hosting.
+#
+# ---------------------------------------------------------------------------
+# SIGNING KEY HANDLING (Option A — maintainer key, out-of-band)
+# ---------------------------------------------------------------------------
+# The ed25519 PRIVATE signing key is NEVER committed to the repository. It is
+# held out-of-band as a GitHub repo/org Actions SECRET (`CATALOG_SIGN_KEY`,
+# hex-encoded: 64 chars for a 32-byte seed or 128 for a keypair dump) and is
+# only ever materialised into a temp file inside the signing job, on the
+# default-branch push path. Mint it with `catalog keygen` on an offline machine;
+# provision its PUBLIC half into release builds via `ISOTERM_CATALOG_PUBKEY_HEX`
+# (Spec 082 US2). Rotating the key = re-run `keygen`, update the secret, and
+# re-provision the public half (see the FR-017 key-rotation runbook).
+#
+# Option B (OIDC -> cloud KMS, no long-lived secret) is sketched in comments on
+# the `sign` step below; Option A is the shipped default for simplicity.
+
+on:
+  pull_request:
+    paths:
+      - 'catalog/**'
+  push:
+    branches: [main]
+    paths:
+      - 'catalog/**'
+
+# A leaked key file (Option A) must never outlive its job; the default
+# GITHUB_TOKEN needs only read access for this workflow.
+permissions:
+  contents: read
+
+jobs:
+  # PR gate: validate every descriptor (schema + sha256 + URL + core_compat).
+  # Runs on PRs AND on the default-branch push (so a merge re-gates before it
+  # ever signs).
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the catalog
+        uses: actions/checkout@v4
+        with:
+          # This job only reads the tree; don't leave GITHUB_TOKEN in .git/config.
+          persist-credentials: false
+
+      - name: Install the Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      # In the catalog repo there is no isoterm source tree, so the tool is
+      # installed from the isoterm repo at a pinned tag. When this workflow is
+      # run locally inside the isoterm repo, swap this for:
+      #   cargo build -p isoterm-catalog-tools --features ... && PATH=...
+      - name: Install isoterm-catalog-tools
+        run: cargo install --git https://github.com/isoterm/isoterm --tag catalog-tools-v0.1.0 isoterm-catalog-tools
+
+      # FR-012 / FR-013 contribution gate. Fails (non-zero) listing every
+      # broken descriptor by file + rule; no broken descriptor can be signed.
+      - name: Validate descriptors (schema / sha256 / URL / core_compat)
+        run: catalog validate --descriptors catalog/items --check-urls --artifacts catalog/artifacts
+
+  # Default-branch (merge) path: re-build + sign with the maintainer key, then
+  # publish the signed manifest as a static artifact. Gated on `validate` so a
+  # broken descriptor never reaches the signing step.
+  build-and-sign:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the catalog
+        uses: actions/checkout@v4
+        with:
+          # This job only reads the tree; don't leave GITHUB_TOKEN in .git/config.
+          persist-credentials: false
+
+      - name: Install the Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install isoterm-catalog-tools
+        run: cargo install --git https://github.com/isoterm/isoterm --tag catalog-tools-v0.1.0 isoterm-catalog-tools
+
+      # Derive a deterministic build timestamp from the merge commit so a re-run
+      # over identical inputs is byte-identical (SC-001) and matches the local
+      # tool when the same SOURCE_DATE_EPOCH is used (SC-005). `git log -1
+      # --format=%ct` is the commit's Unix-seconds author time.
+      - name: Compute SOURCE_DATE_EPOCH from the merge commit
+        id: epoch
+        run: echo "value=$(git log -1 --format=%ct)" >> "$GITHUB_OUTPUT"
+
+      - name: Aggregate descriptors into a byte-exact manifest.json
+        run: catalog build --descriptors catalog/items --artifacts catalog/artifacts --out manifest.json
+        env:
+          SOURCE_DATE_EPOCH: ${{ steps.epoch.outputs.value }}
+
+      # Option A: write the maintainer private key from the repo/org secret into
+      # a temp file ONLY for the duration of signing, then sign + self-verify.
+      # The key file lives under $RUNNER_TEMP (cleaned up by the runner) and is
+      # 0600; it is never committed and never logged.
+      #
+      # Option B (OIDC -> KMS, no long-lived secret): replace this step with an
+      # `id-token: write` permission + a cloud-KMS signing action that signs the
+      # exact `manifest.json` bytes and writes the 64-byte sig to
+      # `manifest.json.sig`. The public half is still provisioned into builds
+      # via ISOTERM_CATALOG_PUBKEY_HEX.
+      - name: Sign the manifest with the maintainer key (out-of-band secret)
+        run: |
+          umask 077
+          keyfile="$RUNNER_TEMP/catalog-sign.key"
+          # Remove the key on ANY exit (success OR a non-zero `catalog sign`),
+          # since the default shell is `bash -eo pipefail` and a failing sign
+          # would otherwise skip a trailing `rm`.
+          trap 'rm -f "$keyfile"' EXIT
+          printf '%s' "$CATALOG_SIGN_KEY" > "$keyfile"
+          catalog sign --manifest manifest.json --key "$keyfile"
+        env:
+          # The private key is an out-of-band repo/org secret — never committed.
+          CATALOG_SIGN_KEY: ${{ secrets.CATALOG_SIGN_KEY }}
+
+      - name: Publish the signed catalog as a build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: signed-catalog
+          path: |
+            manifest.json
+            manifest.json.sig
+          if-no-files-found: error

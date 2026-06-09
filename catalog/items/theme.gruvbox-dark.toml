@@ -1,0 +1,22 @@
+# First-party catalog descriptor — Gruvbox Dark theme pack (Spec 082 FR-002).
+#
+# REAL committed Gogh-format theme JSON under catalog/artifacts/gruvbox-dark.json
+# with a REAL sha256 (recomputed + verified by `isoterm-catalog-tools build`,
+# FR-005). os/arch "any": plain JSON, no native code (FR-015 cross-platform).
+id = "theme.gruvbox-dark"
+category = "ui_asset"
+name = "Gruvbox Dark"
+description = "Retro-groove warm dark color palette (Gogh-format theme pack). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/gruvbox-dark.json"
+size = 570
+sha256 = "cbbed01759db77c13042483eec9082df547505899bbe2401e73eec4d7ed33b3a"

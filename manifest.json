@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-06-09T17:21:23Z",
+  "items": [
+    {
+      "id": "theme.gruvbox-dark",
+      "category": "ui_asset",
+      "name": "Gruvbox Dark",
+      "description": "Retro-groove warm dark color palette (Gogh-format theme pack). MIT-licensed.",
+      "install_kind": "download_and_activate",
+      "ui_asset_kind": "theme",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "core_compat": ">=0.1.0, <0.2.0",
+          "artifacts": [
+            {
+              "os": "any",
+              "arch": "any",
+              "url": "https://catalog.isoterm.dev/v1/themes/gruvbox-dark.json",
+              "size": 570,
+              "sha256": "cbbed01759db77c13042483eec9082df547505899bbe2401e73eec4d7ed33b3a"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "theme.nord",
+      "category": "ui_asset",
+      "name": "Nord",
+      "description": "Arctic, north-bluish color palette (Gogh-format theme pack). MIT-licensed.",
+      "install_kind": "download_and_activate",
+      "ui_asset_kind": "theme",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "core_compat": ">=0.1.0, <0.2.0",
+          "artifacts": [
+            {
+              "os": "any",
+              "arch": "any",
+              "url": "https://catalog.isoterm.dev/v1/themes/nord.json",
+              "size": 572,
+              "sha256": "e30e06c9f1bb0a1753443120eff1a3630a9df7a9413bfddb2a954b2c062522d6"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

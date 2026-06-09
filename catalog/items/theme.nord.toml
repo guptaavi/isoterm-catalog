@@ -1,0 +1,28 @@
+# First-party catalog descriptor — Nord theme pack (Spec 082 FR-002).
+#
+# The artifact is a REAL, committed Gogh-format theme JSON under
+# catalog/artifacts/nord.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`, FR-005). os/arch are "any" because a theme
+# pack is plain JSON with no native code — it installs identically on every
+# host (FR-015 cross-platform).
+id = "theme.nord"
+category = "ui_asset"
+name = "Nord"
+description = "Arctic, north-bluish color palette (Gogh-format theme pack). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+# Matches the current core (isoterm 0.1.x). Lint-checked by `validate` (FR-013).
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+# URL reflects the INTENDED first-party hosting (real artifact hosting is
+# out-of-scope-v1 — see catalog/README.md). The basename `nord.json` resolves
+# to the committed catalog/artifacts/nord.json, whose sha256 `build` recomputes.
+url = "https://catalog.isoterm.dev/v1/themes/nord.json"
+size = 572
+sha256 = "e30e06c9f1bb0a1753443120eff1a3630a9df7a9413bfddb2a954b2c062522d6"
