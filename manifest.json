@@ -1,7 +1,76 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-06-09T17:21:23Z",
+  "generated_at": "2026-06-09T17:21:40Z",
   "items": [
+    {
+      "id": "chassis.kde-like",
+      "category": "ui_asset",
+      "name": "KDE-like chassis",
+      "description": "Breeze-style window controls with the subtitle bound to the working-directory provider and gently rounded corners. Merges ONLY the chrome slice — terminal colors and fonts stay yours. (No minimize slot exists, so Breeze's dash control is dropped.)",
+      "install_kind": "download_and_activate",
+      "ui_asset_kind": "theme",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "core_compat": ">=0.1.0, <0.2.0",
+          "artifacts": [
+            {
+              "os": "any",
+              "arch": "any",
+              "url": "https://catalog.isoterm.dev/v1/chassis/chassis-kde-like.toml",
+              "size": 1047,
+              "sha256": "11de04d8216252017443a6f1803e97c53b846a566ca8d5e4565333ed4bf381af"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chassis.macos-like",
+      "category": "ui_asset",
+      "name": "macOS-like chassis",
+      "description": "Round traffic-light window controls, minimal labels, rounded card. Merges ONLY the chrome slice — terminal colors and fonts stay yours. Control/LED colors follow your palette's status borders (no per-glyph color knob exists).",
+      "install_kind": "download_and_activate",
+      "ui_asset_kind": "theme",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "core_compat": ">=0.1.0, <0.2.0",
+          "artifacts": [
+            {
+              "os": "any",
+              "arch": "any",
+              "url": "https://catalog.isoterm.dev/v1/chassis/chassis-macos-like.toml",
+              "size": 1242,
+              "sha256": "f28012cc0c04d721c81b6284ad25e2cfddda1f8e15daa488a4c87160489421b7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chassis.windows-like",
+      "category": "ui_asset",
+      "name": "Windows-like chassis",
+      "description": "Square flat window controls with visible text labels (RUN/OK/ERR, exit status + runtime in the footer) and squared corners. Merges ONLY the chrome slice — terminal colors and fonts stay yours.",
+      "install_kind": "download_and_activate",
+      "ui_asset_kind": "theme",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "core_compat": ">=0.1.0, <0.2.0",
+          "artifacts": [
+            {
+              "os": "any",
+              "arch": "any",
+              "url": "https://catalog.isoterm.dev/v1/chassis/chassis-windows-like.toml",
+              "size": 1067,
+              "sha256": "35814c5700dec524fe7dd4475e4e083b5c60279f226ca7538906b6107274b516"
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "theme.gruvbox-dark",
       "category": "ui_asset",

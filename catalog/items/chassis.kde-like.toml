@@ -1,0 +1,30 @@
+# First-party catalog descriptor — KDE-like chassis preset (Spec 083 FR-039).
+#
+# The artifact is a REAL, committed isoterm-native chrome-slice TOML under
+# catalog/artifacts/chassis-kde-like.toml with a REAL sha256 (recomputed +
+# verified by `isoterm-catalog-tools build`, FR-005). os/arch are "any"
+# because a chassis preset is plain TOML with no native code (FR-015).
+# ui_asset_kind is "theme" (the schema's closest kind — the pack IS a theme
+# slice); the activator routing discriminates on the `chassis.` id prefix.
+id = "chassis.kde-like"
+category = "ui_asset"
+name = "KDE-like chassis"
+description = "Breeze-style window controls with the subtitle bound to the working-directory provider and gently rounded corners. Merges ONLY the chrome slice — terminal colors and fonts stay yours. (No minimize slot exists, so Breeze's dash control is dropped.)"
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+# Matches the current core (isoterm 0.1.x). Lint-checked by `validate` (FR-013).
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+# URL reflects the INTENDED first-party hosting (real artifact hosting is
+# out-of-scope-v1 — see catalog/README.md). The basename resolves to the
+# committed catalog/artifacts/chassis-kde-like.toml, whose sha256 `build`
+# recomputes.
+url = "https://catalog.isoterm.dev/v1/chassis/chassis-kde-like.toml"
+size = 1047
+sha256 = "11de04d8216252017443a6f1803e97c53b846a566ca8d5e4565333ed4bf381af"

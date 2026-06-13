@@ -1,0 +1,37 @@
+# chassis.macos-like — first-party chassis preset pack (Spec 083 FR-039).
+#
+# An isoterm-native theme.toml SUBSET carrying ONLY chrome fields; the
+# ChassisActivator merges exactly this chrome slice (merge_chrome_slice) so
+# terminal colors, ANSI palette, and fonts always stay the user's (FR-035).
+#
+# macOS-like: round traffic-light window controls, minimal labels, rounded
+# card. Approximations within existing knobs: the control glyphs are the
+# round "●" but their red/amber/green FILL has no per-glyph color knob — the
+# controls and status LED take their colors from the active palette's
+# border_running/success/failure (the COLOR slice), which this chrome pack
+# deliberately does not touch.
+
+chrome_mode = "skeuomorphic"
+
+[chassis]
+# macOS titlebars show the document path — bind the subtitle to cwd and keep
+# the footer minimal (duration stays: chrome must carry info, not flavor).
+subtitle     = "cwd"
+footer_left  = "duration"
+footer_right = "hidden"
+
+[icons]
+close         = "●"
+maximize      = "●"
+restore       = "●"
+badge_running = "…"
+badge_success = "✓"
+badge_failed  = "✕"
+
+[block]
+card_style       = "skeuomorphic"
+corner_radius_px = 10.0
+border_width_px  = 1.0
+
+[typography.chassis]
+size_pt = 11.0

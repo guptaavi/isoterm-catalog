@@ -1,0 +1,35 @@
+# chassis.windows-like — first-party chassis preset pack (Spec 083 FR-039).
+#
+# An isoterm-native theme.toml SUBSET carrying ONLY chrome fields; the
+# ChassisActivator merges exactly this chrome slice (merge_chrome_slice) so
+# terminal colors, ANSI palette, and fonts always stay the user's (FR-035).
+#
+# Windows-like: square/flat controls, text labels visible, squared corners.
+# Approximations within existing knobs: there is no minimize slot on the
+# chassis (maximize/restore/close only), and control colors follow the active
+# palette's status borders (COLOR slice) rather than this pack.
+
+chrome_mode = "skeuomorphic"
+
+[chassis]
+# Labels visible: the command in the title area, explicit status + runtime in
+# the footer.
+subtitle     = "command"
+footer_left  = "exit_status"
+footer_right = "duration"
+
+[icons]
+maximize      = "▢"
+restore       = "❐"
+close         = "✕"
+badge_running = "RUN"
+badge_success = "OK"
+badge_failed  = "ERR"
+
+[block]
+card_style       = "flat"
+corner_radius_px = 0.0
+border_width_px  = 1.0
+
+[typography.chassis]
+size_pt = 12.0
