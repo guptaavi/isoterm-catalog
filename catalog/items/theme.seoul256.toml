@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Seoul256 theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/seoul256.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.seoul256"
+category = "ui_asset"
+name = "Seoul256"
+description = "Seoul256 — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/seoul256.json"
+size = 543
+sha256 = "26c4a00a70556d3bd7eb8b6f4cd90d122b198247fa7196ea0d1d00b80fa3d9f1"

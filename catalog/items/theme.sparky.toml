@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Sparky theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/sparky.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.sparky"
+category = "ui_asset"
+name = "Sparky"
+description = "Sparky — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/sparky.json"
+size = 541
+sha256 = "dcb1d0ca2d2f49dae5e3c4cadc004c12fcc2b0e929e32416c827abb0b01060d9"

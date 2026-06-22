@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Tempus Rift theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/tempus-rift.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.tempus-rift"
+category = "ui_asset"
+name = "Tempus Rift"
+description = "Tempus Rift — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/tempus-rift.json"
+size = 607
+sha256 = "b4be95c64c2ead70287aa71b3c435ec352ee1305ec0625ec756a0fbe4bd924d2"

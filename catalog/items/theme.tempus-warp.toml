@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Tempus Warp theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/tempus-warp.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.tempus-warp"
+category = "ui_asset"
+name = "Tempus Warp"
+description = "Tempus Warp — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/tempus-warp.json"
+size = 607
+sha256 = "58a9e00b1cdae7665ff88b3c9d0c2609b9205d3e0faec4b4a921d21ed1fa6021"

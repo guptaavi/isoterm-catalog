@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Dimmed Monokai theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/dimmed-monokai.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.dimmed-monokai"
+category = "ui_asset"
+name = "Dimmed Monokai"
+description = "Dimmed Monokai — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/dimmed-monokai.json"
+size = 549
+sha256 = "bb73efd6985c350ee40b1f261a0b081cf090ad521e983707b4f91d8fcf79a29c"

@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Monokai Pro Light Sun theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/monokai-pro-light-sun.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.monokai-pro-light-sun"
+category = "ui_asset"
+name = "Monokai Pro Light Sun"
+description = "Monokai Pro Light Sun — Gogh color scheme (light). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/monokai-pro-light-sun.json"
+size = 557
+sha256 = "abb977f2f64c031bf31fb0f00eb4078c5962a5cf33f5a66c72821baed50dd962"

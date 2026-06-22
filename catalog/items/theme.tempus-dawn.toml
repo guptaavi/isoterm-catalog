@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Tempus Dawn theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/tempus-dawn.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.tempus-dawn"
+category = "ui_asset"
+name = "Tempus Dawn"
+description = "Tempus Dawn — Gogh color scheme (light). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/tempus-dawn.json"
+size = 608
+sha256 = "054b2ffd2637ad05688d7be9c0685be207773b7549bd6a19eb721bc5ae5c8fe8"

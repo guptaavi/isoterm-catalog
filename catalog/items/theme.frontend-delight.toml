@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Frontend Delight theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/frontend-delight.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.frontend-delight"
+category = "ui_asset"
+name = "Frontend Delight"
+description = "Frontend Delight — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/frontend-delight.json"
+size = 551
+sha256 = "c6ee01e22bfdda83f9c8bced05d7166f81ff82f28219ea255568369673c28d9f"

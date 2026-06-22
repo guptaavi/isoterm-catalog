@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Panda theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/panda.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.panda"
+category = "ui_asset"
+name = "Panda"
+description = "Panda — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/panda.json"
+size = 540
+sha256 = "5dae6e4f1d2b01b8bb9833335af6970fa1b0b4b9e4ce3cd5883329c8bdbc2c8f"

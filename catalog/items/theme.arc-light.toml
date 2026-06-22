@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Arc Light theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/arc-light.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.arc-light"
+category = "ui_asset"
+name = "Arc Light"
+description = "Arc Light — Gogh color scheme (light). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/arc-light.json"
+size = 581
+sha256 = "38c967d6f2a1b9d3cec9efd9c01bf738ce1cb87d54aa4136c88993cc4f180236"

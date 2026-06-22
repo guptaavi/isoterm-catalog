@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Hurtado theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/hurtado.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.hurtado"
+category = "ui_asset"
+name = "Hurtado"
+description = "Hurtado — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/hurtado.json"
+size = 542
+sha256 = "cbcfd99e829b45e0e0ff443a9f64dad35e71a1fa975613071f88d87570dc5b52"

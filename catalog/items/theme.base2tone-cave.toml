@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Base2Tone Cave theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/base2tone-cave.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.base2tone-cave"
+category = "ui_asset"
+name = "Base2Tone Cave"
+description = "Base2Tone Cave — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/base2tone-cave.json"
+size = 549
+sha256 = "24604b977331ca5b22b7e8edde76c76f81f6f9cc5a2c043f982e652e902fd073"

@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Monokai Pro Ristretto theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/monokai-pro-ristretto.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.monokai-pro-ristretto"
+category = "ui_asset"
+name = "Monokai Pro Ristretto"
+description = "Monokai Pro Ristretto — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/monokai-pro-ristretto.json"
+size = 556
+sha256 = "2941bccea15680df2fd2d98109d51e0a77d54ef63b0814516014919cb600b497"

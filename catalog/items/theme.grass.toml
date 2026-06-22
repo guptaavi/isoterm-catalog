@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Grass theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/grass.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.grass"
+category = "ui_asset"
+name = "Grass"
+description = "Grass — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/grass.json"
+size = 540
+sha256 = "eeb857f3f95a1f1717389a946f640746b4edb37a7334715aeb5b235e7e5838f6"

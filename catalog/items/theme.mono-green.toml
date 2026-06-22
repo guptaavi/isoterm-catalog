@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Mono Green theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/mono-green.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.mono-green"
+category = "ui_asset"
+name = "Mono Green"
+description = "Mono Green — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/mono-green.json"
+size = 545
+sha256 = "c35f96afc23a1b1dd53e21727406f54a11e168b30f019399e9f3098f283a62f2"

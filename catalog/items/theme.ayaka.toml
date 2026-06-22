@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Ayaka theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/ayaka.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.ayaka"
+category = "ui_asset"
+name = "Ayaka"
+description = "Ayaka — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/ayaka.json"
+size = 592
+sha256 = "7da28054afc4c8981989fdccf6be4f26bd40266caafc0c60d5253e83fef6bd22"

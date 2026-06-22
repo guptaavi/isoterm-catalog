@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Tokyo Night Storm theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/tokyo-night-storm.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.tokyo-night-storm"
+category = "ui_asset"
+name = "Tokyo Night Storm"
+description = "Tokyo Night Storm — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/tokyo-night-storm.json"
+size = 552
+sha256 = "0bd73db761deef2735f8ebc81c31670fed63ed6d5d9fe4be0d391e3ebb20ad13"

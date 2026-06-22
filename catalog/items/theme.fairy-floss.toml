@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Fairy Floss theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/fairy-floss.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.fairy-floss"
+category = "ui_asset"
+name = "Fairy Floss"
+description = "Fairy Floss — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/fairy-floss.json"
+size = 546
+sha256 = "1745789c399012a1ffb299a68fd7aae86759aa8bba555c19cdc70a8d0eec03bc"

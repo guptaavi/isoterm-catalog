@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Base2Tone Mall theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/base2tone-mall.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.base2tone-mall"
+category = "ui_asset"
+name = "Base2Tone Mall"
+description = "Base2Tone Mall — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/base2tone-mall.json"
+size = 549
+sha256 = "dffca92d101aae5dd3ce3a73b8bac25ee1f85f77ff0e3a8c03a5f1542ed5e560"

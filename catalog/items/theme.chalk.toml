@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Chalk theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/chalk.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.chalk"
+category = "ui_asset"
+name = "Chalk"
+description = "Chalk — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/chalk.json"
+size = 540
+sha256 = "c4e05a24719a092947f5a58139c210d1de56e7b85cf573e947e45519007ebf06"

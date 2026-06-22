@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Base2Tone Porch theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/base2tone-porch.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.base2tone-porch"
+category = "ui_asset"
+name = "Base2Tone Porch"
+description = "Base2Tone Porch — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/base2tone-porch.json"
+size = 550
+sha256 = "e6bafded400e0a3786e623d3cf94c27d0243a201b41367a7449f70526864092f"

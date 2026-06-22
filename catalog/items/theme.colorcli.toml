@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Colorcli theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/colorcli.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.colorcli"
+category = "ui_asset"
+name = "Colorcli"
+description = "Colorcli — Gogh color scheme (light). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/colorcli.json"
+size = 544
+sha256 = "4e5014689d262339ec831cd529d03caf74149e726d467012af4b8f88fe513006"

@@ -1,0 +1,44 @@
+# chassis.flat-spacious-left — Spec 086 composable-axis showcase pack.
+#
+# A first-party chassis preset that exercises the NEW composable axes the
+# binary chrome_mode could never express (Spec 086 US4): a FLAT card (no
+# gradients/screws) that is nonetheless SPACIOUS (1.4x padding) with the
+# window controls on the LEFT (macOS-style). Pre-086 "minimal" was flat AND
+# tight AND right-handed; "skeuomorphic" was raised AND default-spaced — this
+# combination was impossible.
+#
+# An isoterm-native theme.toml SUBSET carrying ONLY chrome fields; the
+# ChassisActivator merges exactly this chrome slice (merge_chrome_slice) so
+# terminal colors, ANSI palette, and fonts always stay the user's (FR-035).
+# A Zed/Gogh color theme composes on top — the slices are field-disjoint.
+
+# DENSITY axis — full chassis layout (header + footer + card).
+chrome_density = "full"
+
+[chassis]
+subtitle     = "cwd"
+footer_left  = "duration"
+footer_right = "hidden"
+
+[icons]
+close         = "✕"
+maximize      = "⛶"
+restore       = "⤓"
+badge_running = "…"
+badge_success = "✓"
+badge_failed  = "✕"
+
+[block]
+# STYLE axis — flat (no gradients/screws/shadow), square corners.
+card_style       = "flat"
+corner_radius_px = 0.0
+border_width_px  = 1.0
+# DENSITY scale — 1.4x airier than the default (the "spacious" the user asked
+# for, independent of style).
+density_scale    = 1.4
+# POSITION axis — window controls on the LEFT edge (macOS-style; close hugs
+# the corner).
+control_position = "left"
+
+[typography.chassis]
+size_pt = 12.0

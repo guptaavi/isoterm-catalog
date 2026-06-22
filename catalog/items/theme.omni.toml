@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Omni theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/omni.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.omni"
+category = "ui_asset"
+name = "Omni"
+description = "Omni — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/omni.json"
+size = 539
+sha256 = "7de32abfe4a80a6b5cceffa74eb971e6b8b743eb50ec33ceebd9deea0862fe83"

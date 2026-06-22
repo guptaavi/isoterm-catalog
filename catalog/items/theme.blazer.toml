@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Blazer theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/blazer.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.blazer"
+category = "ui_asset"
+name = "Blazer"
+description = "Blazer — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/blazer.json"
+size = 541
+sha256 = "e4c7335f015aaf3ca071ee438c5616ad342d9a02105f91dde705c5c9ac763f6f"

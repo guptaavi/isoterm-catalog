@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Atelier Dune theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/atelier-dune.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.atelier-dune"
+category = "ui_asset"
+name = "Atelier Dune"
+description = "Atelier Dune — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/atelier-dune.json"
+size = 647
+sha256 = "7a16bcbb4986f6a9f863177473fac3bdd6171baa1e1990bc8a2083b89ef8fc1e"

@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Monokai Dark theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/monokai-dark.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.monokai-dark"
+category = "ui_asset"
+name = "Monokai Dark"
+description = "Monokai Dark — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/monokai-dark.json"
+size = 547
+sha256 = "c74ce0c54a4334f1cff4ff612ac3127352562808b8c6d8d28f74b32a0021069e"

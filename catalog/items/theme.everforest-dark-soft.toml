@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Everforest Dark Soft theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/everforest-dark-soft.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.everforest-dark-soft"
+category = "ui_asset"
+name = "Everforest Dark Soft"
+description = "Everforest Dark Soft — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/everforest-dark-soft.json"
+size = 555
+sha256 = "d512f94a2f0d6bee8ae65e7c828fbbb86dcc75640df7cfc812cd5799a2b5d958"

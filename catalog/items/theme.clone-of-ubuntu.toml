@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Clone Of Ubuntu theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/clone-of-ubuntu.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.clone-of-ubuntu"
+category = "ui_asset"
+name = "Clone Of Ubuntu"
+description = "Clone Of Ubuntu — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/clone-of-ubuntu.json"
+size = 550
+sha256 = "8ad733c3f5bb6553cb75339219ac2614aa640afb0de533c0db8d5559d7cab8e1"

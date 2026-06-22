@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Aura theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/aura.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.aura"
+category = "ui_asset"
+name = "Aura"
+description = "Aura — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/aura.json"
+size = 539
+sha256 = "3f06138877417ec9cb375015b2838677f04a8fe2840f3307a3db12886c3fdd90"

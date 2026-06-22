@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Base4Tone Classic B theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/base4tone-classic-b.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.base4tone-classic-b"
+category = "ui_asset"
+name = "Base4Tone Classic B"
+description = "Base4Tone Classic B — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/base4tone-classic-b.json"
+size = 554
+sha256 = "bfb473fbe5161741c5ea94e1259499841e079cee55fa565dde9bc2319722c4e9"

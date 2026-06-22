@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Catppuccin Frappé theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/catppuccin-frapp.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.catppuccin-frapp"
+category = "ui_asset"
+name = "Catppuccin Frappé"
+description = "Catppuccin Frappé — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/catppuccin-frapp.json"
+size = 553
+sha256 = "5b35dc084f11572cdb92d6c0f7e1a1569151cd6387e4c25167be9f8b5c413444"

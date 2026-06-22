@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Material theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/material.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.material"
+category = "ui_asset"
+name = "Material"
+description = "Material — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/material.json"
+size = 543
+sha256 = "2718b2050c53761c951e3ff9020b157526fa6e2ae1d496122dc72f72dc67dd49"

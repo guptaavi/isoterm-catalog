@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Pali theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/pali.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.pali"
+category = "ui_asset"
+name = "Pali"
+description = "Pali — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/pali.json"
+size = 539
+sha256 = "98014e53d194ca6c1bc2b201c5f652965f3c71597773517dd6ca1f3e7804c3fe"

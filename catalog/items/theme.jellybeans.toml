@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Jellybeans theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/jellybeans.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.jellybeans"
+category = "ui_asset"
+name = "Jellybeans"
+description = "Jellybeans — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/jellybeans.json"
+size = 545
+sha256 = "78e82e87b991836bb5061d149d3b884c49aeef0711b125db0d1af4ca27bb3f2e"

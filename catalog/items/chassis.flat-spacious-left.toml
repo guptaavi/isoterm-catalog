@@ -1,0 +1,36 @@
+# First-party catalog descriptor — flat-spacious-left chassis preset (Spec 086 US4).
+#
+# A showcase pack for the NEW composable chrome axes (Spec 086): the binary
+# pre-086 chrome_mode could only offer "skeuomorphic" (raised + default-spaced)
+# or "minimal" (flat + tight + right-handed). This pack proves the axes are
+# now independent — a FLAT card that is SPACIOUS (1.4x) with LEFT-side window
+# controls, a combination the old enum could not express.
+#
+# The artifact is a REAL, committed isoterm-native chrome-slice TOML under
+# catalog/artifacts/chassis-flat-spacious-left.toml with a REAL sha256
+# (recomputed + verified by `isoterm-catalog-tools build`, FR-005). os/arch are
+# "any" because a chassis preset is plain TOML with no native code (FR-015).
+# ui_asset_kind is "theme" (the schema's closest kind — the pack IS a theme
+# slice); the activator routing discriminates on the `chassis.` id prefix.
+id = "chassis.flat-spacious-left"
+category = "ui_asset"
+name = "Flat · spacious · left controls"
+description = "Flat square card, 1.4x airier spacing, window controls on the left. Showcases the composable DENSITY + STYLE + POSITION axes (Spec 086). Merges ONLY the chrome slice — terminal colors and fonts stay yours."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+# Matches the current core (isoterm 0.1.x). Lint-checked by `validate` (FR-013).
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+# URL reflects the INTENDED first-party hosting (real artifact hosting is
+# out-of-scope-v1 — see catalog/README.md). The basename resolves to the
+# committed catalog/artifacts/chassis-flat-spacious-left.toml, whose sha256
+# `build` recomputes.
+url = "https://catalog.isoterm.dev/v1/chassis/chassis-flat-spacious-left.toml"
+size = 1533
+sha256 = "fc58d1252c3f95a271701b50b64564a3ce8d0a035647caeddb04c7f30522acbe"

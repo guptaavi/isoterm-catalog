@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Terminix Dark theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/terminix-dark.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.terminix-dark"
+category = "ui_asset"
+name = "Terminix Dark"
+description = "Terminix Dark — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/terminix-dark.json"
+size = 548
+sha256 = "25182492b4dd9d5c3c739b1c3bad1ce11b1b5d54a167cac17bd681cf9dd3d876"

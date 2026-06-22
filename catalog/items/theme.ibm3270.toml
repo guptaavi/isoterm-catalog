@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Ibm3270 theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/ibm3270.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.ibm3270"
+category = "ui_asset"
+name = "Ibm3270"
+description = "Ibm3270 — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/ibm3270.json"
+size = 542
+sha256 = "38febe523fb1bcdfdabda45d4b99d93a29411ff1a7d00e1a72757272d1172ac0"

@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Solarized Dark Higher Contrast theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/solarized-dark-higher-contrast.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.solarized-dark-higher-contrast"
+category = "ui_asset"
+name = "Solarized Dark Higher Contrast"
+description = "Solarized Dark Higher Contrast — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/solarized-dark-higher-contrast.json"
+size = 565
+sha256 = "7a2ded36067fd594561b0e3adcfbf0df4e4ab6b505660eb1d18f8d8e9a65ea97"

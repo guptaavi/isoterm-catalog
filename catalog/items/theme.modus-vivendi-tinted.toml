@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Modus Vivendi Tinted theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/modus-vivendi-tinted.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.modus-vivendi-tinted"
+category = "ui_asset"
+name = "Modus Vivendi Tinted"
+description = "Modus Vivendi Tinted — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/modus-vivendi-tinted.json"
+size = 555
+sha256 = "2dfdef7b4870d39d84f3977a287dd6ab94f7ce7d87c138743fd4a16942b80a8d"

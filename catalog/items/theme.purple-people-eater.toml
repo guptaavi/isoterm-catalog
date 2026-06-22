@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Purple People Eater theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/purple-people-eater.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.purple-people-eater"
+category = "ui_asset"
+name = "Purple People Eater"
+description = "Purple People Eater — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/purple-people-eater.json"
+size = 554
+sha256 = "32d49ff625288de369dd65996cc29f121ad02b10249f8a3a6f21ff32211d1d2f"

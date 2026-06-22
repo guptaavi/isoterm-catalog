@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Ic Green Ppl theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/ic-green-ppl.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.ic-green-ppl"
+category = "ui_asset"
+name = "Ic Green Ppl"
+description = "Ic Green Ppl — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/ic-green-ppl.json"
+size = 547
+sha256 = "5590d585b6a52ab5838be686175cc279b1df37f4ccf7c5f6db0e55d112757da6"

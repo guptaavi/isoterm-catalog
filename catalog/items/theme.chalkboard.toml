@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Chalkboard theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/chalkboard.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.chalkboard"
+category = "ui_asset"
+name = "Chalkboard"
+description = "Chalkboard — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/chalkboard.json"
+size = 545
+sha256 = "ac3d91900b63ad1f0cc9df3d9011634aa159504bebd0d1b31088a1b224b7acf6"

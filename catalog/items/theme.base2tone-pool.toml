@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Base2Tone Pool theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/base2tone-pool.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.base2tone-pool"
+category = "ui_asset"
+name = "Base2Tone Pool"
+description = "Base2Tone Pool — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/base2tone-pool.json"
+size = 549
+sha256 = "61bec80177a67664a0e7d05df23fd3d35a1020cfc9f871d74d143b8993295156"

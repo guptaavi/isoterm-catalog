@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Spacegray Eighties theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/spacegray-eighties.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.spacegray-eighties"
+category = "ui_asset"
+name = "Spacegray Eighties"
+description = "Spacegray Eighties — Gogh color scheme (dark). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/spacegray-eighties.json"
+size = 553
+sha256 = "769b353e9cc4934c4d3f5e6c267a1e40e4f0e0e42c6316e347c36e8f89bda9ae"

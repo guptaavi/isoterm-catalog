@@ -1,0 +1,21 @@
+# First-party catalog descriptor — Acme theme pack (generated from Gogh).
+# Artifact is a REAL committed Gogh-format theme JSON under
+# catalog/artifacts/acme.json with a REAL sha256 (recomputed + verified by
+# `isoterm-catalog-tools build`). Regenerate with scripts/gen-gogh-catalog.py.
+id = "theme.acme"
+category = "ui_asset"
+name = "Acme"
+description = "Acme — Gogh color scheme (light). MIT-licensed."
+install_kind = "download_and_activate"
+ui_asset_kind = "theme"
+
+[[versions]]
+version = "1.0.0"
+core_compat = ">=0.1.0, <0.2.0"
+
+[[versions.artifacts]]
+os = "any"
+arch = "any"
+url = "https://catalog.isoterm.dev/v1/themes/acme.json"
+size = 626
+sha256 = "ae73e4a15c7ac9e9e2f74118d4de20a77a8f57a83840e4c0bc8a0fc594233b5f"
