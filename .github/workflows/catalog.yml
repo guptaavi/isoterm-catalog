@@ -40,6 +40,10 @@ on:
     branches: [main]
     paths:
       - 'catalog/**'
+  # Allow manual runs (e.g. to re-validate the deployed catalog without a
+  # catalog/** change). Only `validate` runs on a manual dispatch — the
+  # build-and-sign job is gated to `push` below.
+  workflow_dispatch:
 
 # A leaked key file (Option A) must never outlive its job; the default
 # GITHUB_TOKEN needs only read access for this workflow.
@@ -67,12 +71,12 @@ jobs:
       # run locally inside the isoterm repo, swap this for:
       #   cargo build -p isoterm-catalog-tools --features ... && PATH=...
       - name: Install isoterm-catalog-tools
-        run: cargo install --git https://github.com/isoterm/isoterm --tag catalog-tools-v0.1.0 isoterm-catalog-tools
+        run: cargo install --git https://github.com/guptaavi/isoterm isoterm-catalog-tools
 
       # FR-012 / FR-013 contribution gate. Fails (non-zero) listing every
       # broken descriptor by file + rule; no broken descriptor can be signed.
       - name: Validate descriptors (schema / sha256 / URL / core_compat)
-        run: catalog validate --descriptors catalog/items --check-urls --artifacts catalog/artifacts
+        run: isoterm-catalog-tools validate --descriptors catalog/items --check-urls --artifacts catalog/artifacts
 
   # Default-branch (merge) path: re-build + sign with the maintainer key, then
   # publish the signed manifest as a static artifact. Gated on `validate` so a
@@ -81,6 +85,12 @@ jobs:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     needs: validate
     runs-on: ubuntu-latest
+    # Out-of-band maintainer private key (repo/org secret), mapped to an env so
+    # the sign + publish steps below can be SKIPPED when it isn't set — keeping
+    # the job green for the maintainer-signs-locally-and-commits flow (no CI
+    # signing). Set the `CATALOG_SIGN_KEY` secret to enable CI signing.
+    env:
+      CATALOG_SIGN_KEY: ${{ secrets.CATALOG_SIGN_KEY }}
     steps:
       - name: Check out the catalog
         uses: actions/checkout@v4
@@ -92,7 +102,7 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
 
       - name: Install isoterm-catalog-tools
-        run: cargo install --git https://github.com/isoterm/isoterm --tag catalog-tools-v0.1.0 isoterm-catalog-tools
+        run: cargo install --git https://github.com/guptaavi/isoterm isoterm-catalog-tools
 
       # Derive a deterministic build timestamp from the merge commit so a re-run
       # over identical inputs is byte-identical (SC-001) and matches the local
@@ -103,7 +113,7 @@ jobs:
         run: echo "value=$(git log -1 --format=%ct)" >> "$GITHUB_OUTPUT"
 
       - name: Aggregate descriptors into a byte-exact manifest.json
-        run: catalog build --descriptors catalog/items --artifacts catalog/artifacts --out manifest.json
+        run: isoterm-catalog-tools build --descriptors catalog/items --artifacts catalog/artifacts --out manifest.json
         env:
           SOURCE_DATE_EPOCH: ${{ steps.epoch.outputs.value }}
 
@@ -118,20 +128,19 @@ jobs:
       # `manifest.json.sig`. The public half is still provisioned into builds
       # via ISOTERM_CATALOG_PUBKEY_HEX.
       - name: Sign the manifest with the maintainer key (out-of-band secret)
+        if: ${{ env.CATALOG_SIGN_KEY != '' }}
         run: |
           umask 077
           keyfile="$RUNNER_TEMP/catalog-sign.key"
-          # Remove the key on ANY exit (success OR a non-zero `catalog sign`),
-          # since the default shell is `bash -eo pipefail` and a failing sign
-          # would otherwise skip a trailing `rm`.
+          # Remove the key on ANY exit (success OR a non-zero sign), since the
+          # default shell is `bash -eo pipefail` and a failing sign would
+          # otherwise skip a trailing `rm`.
           trap 'rm -f "$keyfile"' EXIT
           printf '%s' "$CATALOG_SIGN_KEY" > "$keyfile"
-          catalog sign --manifest manifest.json --key "$keyfile"
-        env:
-          # The private key is an out-of-band repo/org secret — never committed.
-          CATALOG_SIGN_KEY: ${{ secrets.CATALOG_SIGN_KEY }}
+          isoterm-catalog-tools sign --manifest manifest.json --key "$keyfile"
 
       - name: Publish the signed catalog as a build artifact
+        if: ${{ env.CATALOG_SIGN_KEY != '' }}
         uses: actions/upload-artifact@v4
         with:
           name: signed-catalog
